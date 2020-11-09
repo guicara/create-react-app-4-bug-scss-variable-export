@@ -1,25 +1,26 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss';
+import colors from './template/colors.scss';
 
 function App() {
+  console.log('colors', colors.colorBlack);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className={styles.wrapper}>
+        <header className={styles.header}>
+          <img src={logo} className={styles.logo} alt="logo" />
+          <p>
+            Create React App 4.0.0
+          </p>
+          <p>
+            Variable fetched from SCSS file<br /><i>(with :export and webpack's css-loader)</i>:
+          </p>
+          <p>
+            {colors.colorBlack}
+          </p>
+        </header>
+      </div>
   );
 }
 
